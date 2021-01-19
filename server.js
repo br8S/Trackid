@@ -20,5 +20,11 @@ mongoose.connection.once('open', () => console.log("Connected to MongoDB success
 
 app.use('/', indexRouter);
 
-app.listen(process.env.PORT || 3000)
+const PORT = process.env.PORT || 3000; //if for some reason something goes wrong with .env then 3000
 
+//start up server
+app.listen(PORT, () => { //running at port 3000
+    console.log("Server is running on port: " + PORT);
+})
+
+module.exports = app;
