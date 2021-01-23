@@ -1,0 +1,27 @@
+<div>
+    <label>Title</label>
+    <input type="text" name="title" value="<%= set.title %>">
+</div>
+
+<div>
+    <label>Artist</label>
+    <select name="artist">
+    <% artists.forEach(artist => { %>
+        <% if(artist.id === set.artist) { %>
+            <option selected label="<%= artist.name %>" value="<%= artist.id %>"></option>
+        <% } else { %>
+            <option label="<%= artist.name %>" value="<%= artist.id %>"></option>
+        <% } %>
+    <% }) %>
+    </select>
+</div>
+
+<div>
+    <label>Songs</label>
+    <input type="text" name="songs" value="<%= set.songs %>">
+</div>
+
+<div>
+    <label>Link</label>
+    <input type="text" name="link" value="<%= set.link %>">
+</div>

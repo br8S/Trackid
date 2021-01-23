@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 
 const indexRouter = require('./routes/index')
 const artistRouter = require('./routes/artists')
+const setRouter = require('./routes/sets')
 
 require("dotenv-flow").config();
 
@@ -23,6 +24,7 @@ mongoose.connection.once('open', () => console.log("Connected to MongoDB success
 
 app.use('/', indexRouter);
 app.use('/artists', artistRouter);
+app.use('/sets', setRouter);
 
 const PORT = process.env.PORT || 3000; //if for some reason something goes wrong with .env then 3000
 

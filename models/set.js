@@ -5,12 +5,24 @@ const setSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    createdDate: {
+        type: Date,
+        required: true,
+        default: Date.now
+    },
     artist: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'Artist'
+    },
+    songs: { 
         type: String,
         required: false
     },
-    songs: { 
-        type: Array,
+    link: {
+        type: String,
         required: false
     }
 })
+
+module.exports = mongoose.model('Set', setSchema)

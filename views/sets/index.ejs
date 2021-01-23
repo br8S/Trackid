@@ -1,0 +1,22 @@
+<h2> Sets </h2>
+<form action="/sets" method="GET">
+    <div>
+        <label> Title </label>
+        <input type="text" name="title" value="<%= searchOptions.title %>">
+    </div>
+    <div>
+        <label> Posted Before </label>
+        <input type="date" name="postedBefore" value="<%= searchOptions.postedBefore %>">
+    </div>
+    <div>
+        <label> Posted After </label>
+        <input type="date" name="postedAfter" value="<%= searchOptions.postedAfter %>">
+    </div>
+    <button type="submit"> Search </button>
+</form>
+<br>
+<div>
+    <% sets.forEach(set => { %>
+        <div><%= set.title %> </div>
+    <% }) %>
+</div>

@@ -9,13 +9,17 @@ const Artist = require('../models/artist')
 router.get('/', async (req, res) => {
     let searchOptions = {}
 
+    //if search parameter is excluded we do not filter our parameters
     if (req.query.name != null && req.query.name !== ''){
         searchOptions.name = new RegExp(req.query.name, 'i')
     }
 
     try{
         const artists = await Artist.find(searchOptions)
-        res.render('artists/index', { artists: artists, searchOptions: req.query })
+        res.render('artists/index', { 
+            artists: artists, 
+            searchOptions: req.query 
+        })
     }
     catch{
         res.redirect('/')
@@ -28,7 +32,7 @@ router.get('/new', (req,res) => {
     res.render('artists/new', { artist: new Artist() })
 })
 
-//Create artist rotue
+//Create artist route
     //this second one is responsible for actually putting the data in db
     //we are only creating stuff here so no need to render anything
 router.post('/', async (req, res) => {
