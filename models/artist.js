@@ -7,15 +7,21 @@ const artistSchema = new mongoose.Schema({
     },
     bio: {
         type: String, 
-        required: false
+        required: true
     },
-    artistImage: {
+    headshot: {
         type: Buffer,
-        required: false
+        required: true
     },
-    artistImageType: {
+    headshotType: {
         type: String,
-        required: false
+        required: true
+    }
+})
+
+artistSchema.virtual('headshotPath').get(function(){
+    if(this.headshot != null && this.headshotType != null){
+        return `data:${this.headshotType};charset=utf-8;base64,${this.headshot.toString('base64')}`;
     }
 })
 

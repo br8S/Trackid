@@ -5,6 +5,9 @@
     <button type="submit"> Search </button>
 </form>
 <br>
-<% artists.forEach(artist => { %>
-    <div><%= artist.name %> </div>
-<% }) %>
+<div>
+    <% artists.forEach(artist => { %>
+        <img height="240" width="240" src="<%= artist.headshotPath %>">
+        <div><%= artist.name %> </div>
+    <% }) %>
+</div>

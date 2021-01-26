@@ -7,18 +7,20 @@ const Artist = require('../models/artist')
 //Show all sets route
 
 router.get("/", async (req, res) => {
-    let query = Set.find()
+    let setSearch = Set.find()
+
     if (req.query.title != null && req.query.title != ''){
-        query = query.regex('title', new RegExp(req.query.title, 'i'))
+        setSearch = setSearch.regex('title', new RegExp(req.query.title, 'i'))
     }
     if (req.query.postedBefore != null && req.query.postedBefore != ''){
-        query = query.lte('createdDate', req,query.postedBefore)
+        setSearch = setSearch.lte('createdDate', req.query.postedBefore)
     }
     if (req.query.postedAfter != null && req.query.postedAfter != ''){
-        query = query.gte('createdDate', req,query.postedAfter)
+        setSearch = setSearch.gte('createdDate', req.query.postedAfter)
     }
+    
     try{
-        const sets = await query.exec()
+        const sets = await setSearch.sort({ title: 'asc' }).exec() //this order our books in asc alphabetical order
         res.render('sets/index', { 
             sets: sets,
             searchOptions: req.query
