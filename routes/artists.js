@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const Artist = require('../models/artist')
+const Set = require('../models/set')
 
 const imageMimeTypes = ['image/jpeg', 'image/png', 'image/gif']
 
@@ -57,12 +58,6 @@ router.post('/', async (req, res) => {
     }
 })
 
-//Show artist
-
-//Update an artist route
-
-//Delete an artist route
-
 function saveHeadshot(artist, coverEncoded){
     if(coverEncoded == null) return
     const cover = JSON.parse(coverEncoded);
@@ -71,5 +66,72 @@ function saveHeadshot(artist, coverEncoded){
         artist.headshotType = cover.type;
     }
 }
+
+//Show artist
+router.get('/:id', async (req, res) => {
+    try{
+        artist = await Artist.findById(req.params.id)
+        const sets = await Set.find({ artist: artist.id }).limit(10).exec()
+        res.render('artists/show', {
+            artist: artist,
+            setsByArtist: sets
+        })
+    }
+    catch{
+        res.redirect('/')
+    }
+})
+
+//Update/edit an artist route
+router.get('/:id/edit', async (req, res) => {
+    try{
+        const artist = await Artist.findById(req.params.id)
+        res.render('artists/edit', { artist: artist })
+    }
+    catch{
+        res.redirect('/artists')
+    }
+})
+
+router.put('/:id', async (req, res) => {
+    let artist
+    try{
+        artist = await Artist.findById(req.params.id)
+        artist.name = req.body.name
+        artist.bio = req.body.bio
+        saveHeadshot(artist, req.body.headshot)
+        await artist.save()
+        res.redirect(`/artists/${artist.id}`)
+    }
+    catch{
+        if (artist == null){
+            res.redirect('/')
+        }
+        else{
+            res.render('artists/edit', {
+                artist: artist,
+                errorMessage: 'Error updating Artist'
+            })
+        }
+    }
+})
+
+//Delete an artist route
+router.delete('/:id', async (req, res) => {
+    let artist
+    try{
+        artist = await Artist.findById(req.params.id)
+        await artist.remove()
+        res.redirect('/artists')
+    }
+    catch{
+        if (artist == null){
+            res.redirect('/')
+        }
+        else{
+            res.redirect(`/artists/${artist.id}`)
+        }
+    }
+})
 
 module.exports = router;

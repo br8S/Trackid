@@ -7,7 +7,9 @@
 <br>
 <div>
     <% artists.forEach(artist => { %>
-        <img height="240" width="240" src="<%= artist.headshotPath %>">
+        <a href="/artists/<%= artist.id %>">
+            <img height="240" width="240" src="<%= artist.headshotPath %>">
+        </a>
         <div><%= artist.name %> </div>
     <% }) %>
 </div>

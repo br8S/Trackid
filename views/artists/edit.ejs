@@ -1,0 +1,9 @@
+<h2><%= artist.name %></h2>
+<img height="240" width="240" src="<%= artist.headshotPath %>">
+<br>
+<h3> Edit Artist </h3>
+<form action="/artists/<%= artist.id %>?_method=PUT" method="POST">
+    <%- include('_form_fields') %>
+    <a href="/artists/<%= artist.id %> "> Cancel </a>
+    <button type="submit"> Update </button>
+</form>

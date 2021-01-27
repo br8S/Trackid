@@ -5,9 +5,10 @@ FilePond.registerPlugin(
 );
 
 FilePond.setOptions({
-    stylePanelAspectRatio: 240 / 240,
+    stylePanelAspectRatio: 240/240,
     imageResizeTargetWidth: 240,
     imageResizeTargetHeight: 240,
 })
+
 FilePond.parse(document.body);
 

@@ -1,0 +1,15 @@
+<h2><%= artist.name %></h2>
+<img height="240" width="240" src="<%= artist.headshotPath %>">
+<div> <%= artist.bio %> </div>
+<br>
+<a href="/artists/<%= artist.id %>/edit"> Edit </a>
+<%- include('../partials/deleteForm', { url: `/artists/${artist.id}`}) %>
+
+<% if(setsByArtist.length > 0 ) { %>
+    <h2> Sets By Artist </h2>
+
+    <% setsByArtist.forEach(set => { %>
+        <div><%= set.title %> </div>
+        <a target="_blank" rel="noopener noreferrer" href=" <%= set.link %> "> Link </a>
+    <% }) %>
+<% } %>
