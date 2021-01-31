@@ -17,11 +17,48 @@
 </div>
 
 <div>
-    <label>Songs</label>
-    <input type="text" name="songs" value="<%= set.songs %>">
+    <label>Genre</label>
+    <select name="genre">
+        <% genres.forEach(genre => { %>
+            <% if(genre.id === set.genre) { %>
+                <option selected label="<%= genre.name %>" value="<%= genre.id %>"></option>
+            <% } else { %>
+                <option label="<%= genre.name %>" value="<%= genre.id %>"></option>
+            <% } %>
+        <% }) %>
+        </select>
 </div>
 
 <div>
     <label>Link</label>
     <input type="text" name="link" value="<%= set.link %>">
+</div>
+
+<div id="divid">
+    <%# <label>Songs</label> %>
+    <%# <input id="inputid" type="text" name="songs" value=" set.songs "> %>
+    <%# <button type="button" id="addSong"> Add </button> %>
+
+    <script type="text/javascript">
+        var addSong = document.getElementById('addSong')
+        var songList = document.getElementById('inputid')
+        var count = 0;
+        var newSongs = []
+
+        console.log("this is our value" + songList.value)
+
+        addSong.addEventListener("click", add)
+
+        function add(){
+            newSongs[count] = document.createElement("input");
+
+            const currentDiv = document.getElementById("divid");
+            currentDiv.appendChild(newSongs[count])
+
+            console.log(newSongs[count].value)
+            count++;
+        }
+
+    </script>
+
 </div>

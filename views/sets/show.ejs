@@ -1,0 +1,12 @@
+<h2> <%= set.title %> </h2>
+<div><a target="_blank" rel="noopener noreferrer" href=" <%= set.link %> "> Link </a></div>
+<div> Artist: <a href="/artists/<%= set.artist.id %>"> <%= set.artist.name %>  </a> </div>
+<div> Date Posted: <%= set.createdDate.toDateString() %> </div>
+
+<a href="/sets/<%= set.id %>/edit"> Edit </a>
+<%- include('../partials/deleteForm', { url: `/sets/${set.id}`}) %>
+
+
+
+
+

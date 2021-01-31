@@ -1,0 +1,6 @@
+<h2> Edit Set </h2>
+<form action="/sets/<%= set.id %>?_method=PUT" method="POST">
+    <%- include('_form_fields') %>
+    <a href="/sets"> Cancel</a>
+    <button type="submit"> Update </button>
+</form>

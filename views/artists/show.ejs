@@ -9,7 +9,10 @@
     <h2> Sets By Artist </h2>
 
     <% setsByArtist.forEach(set => { %>
-        <div><%= set.title %> </div>
-        <a target="_blank" rel="noopener noreferrer" href=" <%= set.link %> "> Link </a>
+        <div>
+            <a href="/sets/<%= set.id %>"> <%= set.title %> </a>
+            <a target="_blank" rel="noopener noreferrer" href=" <%= set.link %> "> Link </a>
+        </div>
+        
     <% }) %>
 <% } %>

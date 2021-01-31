@@ -2,6 +2,9 @@
 
 <div>
     <% sets.forEach(set => { %>
-        <div><%= set.title %> </div>
+        <div>
+            <a href="/sets/<%= set.id %>"> <%= set.title %> </a>
+            <a target="_blank" rel="noopener noreferrer" href=" <%= set.link %> "> Link </a>
+        </div>  
     <% }) %>
 </div>

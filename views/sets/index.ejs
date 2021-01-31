@@ -5,6 +5,10 @@
         <input type="text" name="title" value="<%= searchOptions.title %>">
     </div>
     <div>
+        <label> Genre </label>
+        <input type="text" name="genre" value="<%= searchOptions.genre %>">
+    </div>
+    <div>
         <label> Posted Before </label>
         <input type="date" name="postedBefore" value="<%= searchOptions.postedBefore %>">
     </div>
@@ -17,7 +21,9 @@
 <br>
 <div>
     <% sets.forEach(set => { %>
-        <div><%= set.title %> </div>
-        <a target="_blank" rel="noopener noreferrer" href=" <%= set.link %> "> Link </a>
+        <div>
+            <a href="/sets/<%= set.id %>"> <%= set.title %> </a>
+            <a target="_blank" rel="noopener noreferrer" href=" <%= set.link %> "> Link </a>
+        </div>    
     <% }) %>
 </div>

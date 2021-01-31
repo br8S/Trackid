@@ -15,6 +15,11 @@ const setSchema = new mongoose.Schema({
         required: true,
         ref: 'Artist'
     },
+    genre: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'Genre'
+    },
     songs: { 
         type: String,
         required: false

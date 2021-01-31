@@ -7,6 +7,7 @@ const methodOverride = require('method-override')
 const indexRouter = require('./routes/index')
 const artistRouter = require('./routes/artists')
 const setRouter = require('./routes/sets')
+const genreRouter = require('./routes/genres')
 
 require("dotenv-flow").config();
 
@@ -27,6 +28,7 @@ mongoose.connection.once('open', () => console.log("Connected to MongoDB success
 app.use('/', indexRouter);
 app.use('/artists', artistRouter);
 app.use('/sets', setRouter);
+app.use('/genres', genreRouter);
 
 const PORT = process.env.PORT || 3000; //if for some reason something goes wrong with .env then 3000
 

@@ -1,0 +1,12 @@
+<h2> Search Genres </h2>
+<form action="/genres" method="GET">
+    <label> Genre </label>
+    <input type="text" name="name" value="<%= searchOptions.name %>">
+    <button type="submit"> Search </button>
+</form>
+<br>
+<div>
+    <% genres.forEach(genre => { %>
+        <div><%= genre.name %> </div>
+    <% }) %>
+</div>
