@@ -3,16 +3,15 @@ const router = express.Router()
 
 const Set = require('../models/set')
 const Artist = require('../models/artist')
-const Genre = require('../models/genre')
 
 //Show all sets route
 
 router.get("/", async (req, res) => {
     let setSearch = Set.find()
 
-    if (req.query.title != null && req.query.title != ''){
-        setSearch = setSearch.regex('title', new RegExp(req.query.title, 'i'))
-    }
+    // if (req.query.title != null && req.query.title != ''){
+    //     setSearch = setSearch.regex('title', new RegExp(req.query.title, 'i'))
+    // }
     if (req.query.genre != null && req.query.genre != ''){
         setSearch = setSearch.regex('genre', new RegExp(req.query.genre, 'i'))
     }
@@ -22,7 +21,6 @@ router.get("/", async (req, res) => {
     if (req.query.postedAfter != null && req.query.postedAfter != ''){
         setSearch = setSearch.gte('createdDate', req.query.postedAfter)
     }
-    //console.log(req.query.genre)
     
     try{
         const sets = await setSearch.sort({ title: 'asc' }).exec() //this order our books in asc alphabetical order
@@ -31,7 +29,8 @@ router.get("/", async (req, res) => {
             searchOptions: req.query
          })
     }
-    catch{
+    catch(error){
+        console.log(error)
         res.redirect('/')
     }
 })
@@ -132,10 +131,8 @@ router.delete('/:id', async (req,res) => {
 async function renderNewPage(res, set, hasError = false) {
     try{
         const artists = await Artist.find({})
-        const genres = await Genre.find({})
         const params =  {
             artists: artists,
-            genres: genres,
             set: set
         }
 
@@ -152,10 +149,8 @@ async function renderNewPage(res, set, hasError = false) {
 async function renderEditPage(res, set, hasError = false) {
     try{
         const artists = await Artist.find({})
-        const genres = await Genre.find({})
         const params =  {
             artists: artists,
-            genres: genres,
             set: set
         }
 

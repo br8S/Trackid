@@ -1,7 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Archivo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import 'header.css';
+@import 'buttons.css';
 
 :root{
-    font-family: Helvetica, sans-serif;
+    font-family: 'Archivo Black', sans-serif;
     font-size: 20px;
+    background: linear-gradient(to right, rgb(26, 26, 26), rgb(2, 2, 2));
+    color: white;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 3rem;
+}
+
+.inner-container {
+    margin: 0 2rem;
+}
+
+.page-header {
+    font-size: 1.75rem;
+    font-weight: 500;
 }

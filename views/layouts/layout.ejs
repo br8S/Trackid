@@ -21,8 +21,12 @@
 
 </head>
 <body>
-    <%- include('../partials/header') %>
-    <%- include('../partials/errorMessage') %>
-    <%- body %>
+    <div class="container">
+        <%- include('../partials/header') %>
+        <div class="inner-container">
+            <%- include('../partials/errorMessage') %>
+            <%- body %>
+        </div>
+    </div>
 </body>
 </html>

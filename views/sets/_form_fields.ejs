@@ -18,15 +18,7 @@
 
 <div>
     <label>Genre</label>
-    <select name="genre">
-        <% genres.forEach(genre => { %>
-            <% if(genre.id === set.genre) { %>
-                <option selected label="<%= genre.name %>" value="<%= genre.id %>"></option>
-            <% } else { %>
-                <option label="<%= genre.name %>" value="<%= genre.id %>"></option>
-            <% } %>
-        <% }) %>
-        </select>
+    <input type="text" name="genre" value="<%= set.genre %>">
 </div>
 
 <div>
