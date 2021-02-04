@@ -4,6 +4,8 @@
 <h3> Edit Artist </h3>
 <form action="/artists/<%= artist.id %>?_method=PUT" method="POST">
     <%- include('_form_fields') %>
-    <a class="btn btn-primary" href="/artists/<%= artist.id %> "> Cancel </a>
-    <button class="btn btn-primary" type="submit"> Update </button>
+    <div class="form-row form-row-end btn-row">
+        <a class="btn btn-primary" href="/artists/<%= artist.id %> "> Cancel </a>
+        <button class="btn btn-primary" type="submit"> Update </button>
+    </div>
 </form>

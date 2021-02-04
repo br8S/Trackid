@@ -1,29 +1,35 @@
 <h2 class="page-header"> Sets </h2>
 <form action="/sets" method="GET">
-    <div>
-        <label> Title </label>
-        <input type="text" name="title" value="<%= searchOptions.title %>">
+    <div class="form-row">
+        <div class="form-item">
+            <label> Title </label>
+            <input type="text" name="title" value="<%= searchOptions.title %>">
+        </div>
+        <div class="form-item">
+            <label> Genre </label>
+            <input type="text" name="genre" value="<%= searchOptions.genre %>">
+        </div>
     </div>
-    <div>
-        <label> Genre </label>
-        <input type="text" name="genre" value="<%= searchOptions.genre %>">
+    <div class="form-row">
+        <div class="form-item">
+            <label> Posted Before </label>
+            <input type="date" name="postedBefore" value="<%= searchOptions.postedBefore %>">
+        </div>
+        <div class="form-item">
+            <label> Posted After </label>
+            <input type="date" name="postedAfter" value="<%= searchOptions.postedAfter %>">
+        </div>
     </div>
-    <div>
-        <label> Posted Before </label>
-        <input type="date" name="postedBefore" value="<%= searchOptions.postedBefore %>">
+
+    <div class="form-row form-row-end btn-row">
+        <button class="btn btn-primary" type="submit"> Search </button>
     </div>
-    <div>
-        <label> Posted After </label>
-        <input type="date" name="postedAfter" value="<%= searchOptions.postedAfter %>">
-    </div>
-    <button class="btn btn-primary" type="submit"> Search </button>
 </form>
 <br>
 <div>
     <% sets.forEach(set => { %>
         <div>
-            <a href="/sets/<%= set.id %>"> <%= set.title %> </a>
-            <a target="_blank" rel="noopener noreferrer" href=" <%= set.link %> "> Link </a>
+            <a class="set-list" href="/sets/<%= set.id %>"> <%= set.title %> </a>
         </div>    
     <% }) %>
 </div>

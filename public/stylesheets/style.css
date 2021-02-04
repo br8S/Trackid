@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Archivo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 @import 'header.css';
 @import 'buttons.css';
+@import 'form.css';
 
 :root{
     font-family: 'Archivo Black', sans-serif;
@@ -32,4 +32,8 @@ a{
 .page-header {
     font-size: 1.75rem;
     font-weight: 500;
+}
+
+.set-list{
+    color: white;
 }

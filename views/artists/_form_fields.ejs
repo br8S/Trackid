@@ -1,12 +1,18 @@
-<div>
-    <label>Name</label>
-    <input type="text" name="name" value="<%= artist.name %>">
+<div class="form-row">
+    <div class="form-item">
+        <label>Name</label>
+        <input type="text" name="name" value="<%= artist.name %>">
+    </div>
 </div>
-<div>
-    <label>Headshot</label>
-    <input type="file" name="headshot" class="filepond">
-</div>
-<div>
-    <label>Bio</label>
-    <input type="text" name="bio" value="<%= artist.bio %>">
+
+<div class="form-row">
+    <div class="form-item-no-grow">
+        <label>Headshot</label>
+        <input type="file" name="headshot" class="filepond">
+    </div>
+
+    <div class="form-item">
+        <label>Bio</label>
+        <input type="text" name="bio" value="<%= artist.bio %>">
+    </div>
 </div>
