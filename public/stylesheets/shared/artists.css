@@ -1,0 +1,23 @@
+.artist-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.artist-column {
+    margin: 1rem 0;
+    flex-basis: 25%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.artist-name{
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.artist-headshot {
+    display: block;
+    margin: auto;
+}

@@ -11,11 +11,13 @@
     </div>
 </form>
 <br>
-<div>
+<div class="artist-row">
     <% artists.forEach(artist => { %>
-        <a href="/artists/<%= artist.id %>">
-            <img height="240" width="240" src="<%= artist.headshotPath %>">
-        </a>
-        <div><%= artist.name %> </div>
+        <div class="artist-column">
+            <a href="/artists/<%= artist.id %>">
+                <img class="artist-headshot" height="240" width="240" src="<%= artist.headshotPath %>">
+            </a>
+            <div class="artist-name"><%= artist.name %> </div>
+        </div>
     <% }) %>
 </div>

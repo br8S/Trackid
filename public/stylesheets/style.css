@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
-@import 'header.css';
-@import 'buttons.css';
-@import 'form.css';
+@import 'shared/header.css';
+@import 'shared/buttons.css';
+@import 'shared/form.css';
+@import 'shared/artists.css';
 
 :root{
     font-family: 'Archivo Black', sans-serif;
