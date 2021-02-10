@@ -5,8 +5,8 @@
 <div> Date Posted: <%= set.createdDate.toDateString() %> </div>
 
 <div class= "btn-row">
-<a class="btn btn-primary" href="/sets/<%= set.id %>/edit"> Edit </a>
-<%- include('../partials/deleteForm', { url: `/sets/${set.id}`}) %>
+    <a class="btn btn-primary" href="/sets/<%= set.id %>/edit"> Edit </a>
+    <%- include('../partials/deleteForm', { url: `/sets/${set.id}`}) %>
 </div>
 
 

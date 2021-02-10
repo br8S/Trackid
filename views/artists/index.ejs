@@ -15,9 +15,11 @@
     <% artists.forEach(artist => { %>
         <div class="artist-column">
             <a href="/artists/<%= artist.id %>">
-                <img class="artist-headshot" height="240" width="240" src="<%= artist.headshotPath %>">
+                <div class="artist-headshot">
+                    <img height="240" width="240" src="<%= artist.headshotPath %>">
+                    <div class="artist-name"><%= artist.name %> </div>
+                </div>
             </a>
-            <div class="artist-name"><%= artist.name %> </div>
         </div>
     <% }) %>
 </div>

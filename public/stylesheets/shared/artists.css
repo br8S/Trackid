@@ -15,9 +15,20 @@
 .artist-name{
     font-size: 1.1rem;
     text-align: center;
+    color: white;
+}
+
+
+.artist-headshot:hover > .artist-name {
+    text-decoration: line-through;
 }
 
 .artist-headshot {
     display: block;
     margin: auto;
+    transition: opacity 1s;
+}
+
+.artist-headshot:hover{
+    opacity: 60%;
 }

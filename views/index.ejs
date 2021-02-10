@@ -1,9 +1,27 @@
-<h2 class="page-header"> RECENTLY ADDED </h2>
+<div class="container">
+    <h2 class="page-header"> RECENTLY ADDED ARTISTS</h2>
+    <button class="btn-left"></button>
+    <button class="btn-right"></button>
+    <div class="main-artist-row">
+        <% artists.forEach(artist => { %>
+            <div class="main-artist-column">
+                <a href="/artists/<%= artist.id %>">
+                    <div class="main-artist-headshot">
+                        <img height="240" width="240" src="<%= artist.headshotPath %>">
+                        <div class="main-artist-name"><%= artist.name %> </div>
+                    </div>
+                </a>
+            </div>
+        <% }) %>
+    </div>
 
-<div>
-    <% sets.forEach(set => { %>
-        <div>
-            <a class="set-list" href="/sets/<%= set.id %>"> <%= set.title %> </a>
-        </div>  
-    <% }) %>
+    <h2 class="page-header"> RECENTLY ADDED SETS </h2>
+
+    <div>
+        <% sets.forEach(set => { %>
+            <div>
+                <a class="set-list" href="/sets/<%= set.id %>"> <%= set.title %> </a>
+            </div>  
+        <% }) %>
+    </div>
 </div>

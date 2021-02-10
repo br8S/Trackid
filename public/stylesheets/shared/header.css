@@ -1,12 +1,11 @@
 .header-title {
     color: white;
-    font-size: 2.5rem;
+    font-size: 3rem;
     text-decoration: none;
     font-family: 'Archivo Black', sans-serif;
 }
 
 .header-nav{
-    
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -34,3 +33,24 @@
 .header-nav ul a:hover {
     color: rgb(189, 189, 189);
 }
+
+.dropbtn {
+    font-size: 1rem;
+    font-weight: 1rem;
+    padding: 0 0.8rem;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: inherit;
+    font-family: inherit;
+}
+
+.new-drop-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+  }
+
+  .new-drop:hover .new-drop-content {
+    display: block;
+  }
