@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
     let artists
     try{
         sets = await Set.find().sort({ createdDate: 'desc' }).limit(10).exec()
-        artists = await Artist.find().sort({ createdDate: 'desc' }).limit(8).exec()
+        artists = await Artist.find().sort({ createdDate: 'desc' }).limit(10).exec()
     }
     catch(error){
         console.log(error)

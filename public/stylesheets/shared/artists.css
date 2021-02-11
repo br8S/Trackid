@@ -8,13 +8,13 @@
 .artist-column {
     margin: 1rem 0;
     flex-basis: 25%;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
 }
 
 .artist-name{
     font-size: 1.1rem;
-    text-align: center;
     color: white;
 }
 
@@ -31,4 +31,8 @@
 
 .artist-headshot:hover{
     opacity: 60%;
+}
+
+.artist-bio {
+    font-family: 'Roboto', sans-serif;
 }

@@ -5,6 +5,7 @@
 @import 'shared/form.css';
 @import 'shared/artists.css';
 @import 'shared/home.css';
+@import 'shared/artist_profile.css';
 
 :root{
     font-family: 'Archivo Black', sans-serif;
